@@ -1,0 +1,10 @@
+import re
+s = input()
+n, m = [int(e) for e in s.split(' ')]
+data = []
+for _ in range(n):
+    data.append(list('{0:<3}'.format(input())))
+    
+s = ''.join([data[i][j] for j in range(m) for i in range(n)])
+res = re.sub(r'(?<=\w)\W+(?=\w)', ' ', s)
+print(res)
